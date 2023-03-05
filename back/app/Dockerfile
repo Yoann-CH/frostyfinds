@@ -7,6 +7,6 @@ EXPOSE 3000
 ENV DB_HOST=db
 ENV DB_USER=root
 ENV DB_PASSWORD=secret
-ENV DB_DATABASE=shifumi
+ENV DB_DATABASE=frostyfinds
 
 CMD [ "node", "index.js" ]
