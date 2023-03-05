@@ -1,0 +1,40 @@
+.login-card {
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 4px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .login-header {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .login-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .login-body {
+    padding: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .create-account-link {
+    font-size: 14px;
+  }

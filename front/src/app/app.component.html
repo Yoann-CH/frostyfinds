@@ -1,0 +1,17 @@
+<nz-layout>
+  <nz-header>
+    <div class="nav">
+      <img src="../assets/logo_nav.png" alt="" class="logo">
+      <ul nz-menu nzTheme="dark" [nzMode]="'horizontal'" [nzSelectable]="true">
+        <li nz-menu-item routerLink="/">Accueil</li>
+        <li nz-menu-item routerLink="/products">Produits</li>
+        <li nz-menu-item routerLink="/cart">Panier</li>
+      </ul>
+      <button nz-button nzType="primary" routerLink="/login">Connexion</button>
+    </div>
+  </nz-header>
+  <nz-layout>
+    <router-outlet></router-outlet>
+  </nz-layout>
+  <nz-footer class="footer">Frosty Finds ©2023</nz-footer>
+</nz-layout>

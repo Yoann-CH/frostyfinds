@@ -1,0 +1,27 @@
+<nz-card class="login-card">
+    <div class="login-header">
+      <h1 class="login-title">Connexion</h1>
+    </div>
+    <div class="login-body">
+      <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" class="login-form">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="user">
+              <input nz-input formControlName="username" placeholder="Nom d'utilisateur" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="lock">
+              <input nz-input type="password" formControlName="password" placeholder="Mot de passe" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="login-buttons">
+          <button nz-button nzType="primary" [nzLoading]="isSubmitting">Se connecter</button>
+          <a class="create-account-link" routerLink="/register">Créer un compte</a>
+        </nz-form-item>
+      </form>
+    </div>
+  </nz-card>

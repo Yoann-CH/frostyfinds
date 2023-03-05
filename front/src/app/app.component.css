@@ -1,0 +1,24 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+h1 {
+    color: white;
+}
+
+
+  
+.footer {
+text-align: center;
+margin-top: auto;
+height: 80px;
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+}

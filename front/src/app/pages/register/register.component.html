@@ -1,0 +1,33 @@
+<nz-card class="register-card">
+    <div class="register-header">
+      <h1 class="register-title">Créer un compte</h1>
+    </div>
+    <div class="register-body">
+      <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()" class="register-form">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="user">
+              <input nz-input formControlName="username" placeholder="Nom d'utilisateur" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="mail">
+              <input nz-input formControlName="email" placeholder="Email" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="lock">
+              <input nz-input type="password" formControlName="password" placeholder="Mot de passe" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="register-buttons">
+          <button nz-button nzType="primary" [nzLoading]="isSubmitting">Créer un compte</button>
+        </nz-form-item>
+      </form>
+    </div>
+  </nz-card>
