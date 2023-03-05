@@ -1,0 +1,67 @@
+<div class="presentation">
+    <div class="carousel-wrapper-head">
+        <div class="card-wrapper">
+            <div class="header-content">
+                <div class="card-image"></div>
+                <nz-divider></nz-divider>
+                <div class="title-header">Bienvenue sur Frosty Finds, le site de vente d'équipement de ski à bas prix</div>
+                <div class="description-header">Retrouvez ici une large sélection de skis, de bâtons, de chaussures et de vêtements pour vos sorties en montagne.</div>
+            </div>
+        </div>
+        <nz-carousel nzAutoPlay nzEffect="scrollx" [nzLoop]="true">
+            <div nz-carousel-content *ngFor="let image of images_head">
+                <img src="{{ image }}" alt="image" class="carousel-img">
+                </div>
+        </nz-carousel>
+    </div>
+    <h1>Bienvenue sur Frosty Finds</h1>
+    <p>Nous proposons une large sélection d'équipements de sport d'hiver pour tous les niveaux.</p>
+    <div class="carousel-wrapper">
+        <nz-carousel nzAutoPlay nzEffect="scrollx" [nzLoop]="false">
+            <div nz-carousel-content *ngFor="let image of images">
+                <img src="{{ image }}" alt="image" class="carousel-img">
+                </div>
+        </nz-carousel>
+    </div>
+    <button nz-button nzType="primary" routerLink="/products">Explorer les produits</button>
+    <nz-divider></nz-divider>
+    <h2>Promos du moment</h2>
+    <div class="promo">
+        <nz-card [nzCover]="coverTemplate">
+            <ng-template #coverTemplate>
+              <div class="card-image-promo">
+                <img src="https://oberalp.imgix.net/02b018d9-0ecc-461b-9526-cd81328f3897.png?auto=format&w=1280&h=1280" alt="" class="image-promo">
+              </div>
+            </ng-template>
+            <div class="card-content">
+              <div class="card-title">Nom du produit</div>
+              <div class="card-description">Description du produit</div>
+              <div class="card-price">99,99 €</div>
+            </div>
+        </nz-card>
+        <nz-card [nzCover]="coverTemplate">
+            <ng-template #coverTemplate>
+              <div class="card-image-promo">
+                <img src="" alt="">
+              </div>
+            </ng-template>
+            <div class="card-content">
+              <div class="card-title">Nom du produit</div>
+              <div class="card-description">Description du produit</div>
+              <div class="card-price">99,99 €</div>
+            </div>
+        </nz-card>
+        <nz-card [nzCover]="coverTemplate">
+            <ng-template #coverTemplate>
+              <div class="card-image-promo">
+                <img src="" alt="">
+              </div>
+            </ng-template>
+            <div class="card-content">
+              <div class="card-title">Nom du produit</div>
+              <div class="card-description">Description du produit</div>
+              <div class="card-price">99,99 €</div>
+            </div>
+        </nz-card>
+    </div>
+</div>
