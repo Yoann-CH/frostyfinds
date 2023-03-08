@@ -1,9 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mariadb = require('mariadb');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
+// Ajouter le middleware CORS
+app.use(cors());
 
 const pool = mariadb.createPool({
   host: 'db',
@@ -111,31 +115,37 @@ app.get('/api/users', async (req, res) => {
 
 
 app.post('/api/register', async (req, res) => {
-    const { username, email, password } = req.body;
-    const conn = await pool.getConnection();
-    try {
-      const results = await conn.query(`SELECT * FROM users WHERE username = '${username}'`);
-      if (results.length > 0) {
-        res.status(409).send('Conflict');
-      } else {
-        const result = await conn.query(`INSERT INTO users (username, email, password) VALUES ('${username}', '${email}', '${password}')`);
-        const userId = result.insertId;
-        const token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        const response = {
-          id: userId,
-          username: username,
-          email: email,
-          role: 'user',
-          token: token
-        };
-        res.json(response);
-      }
-    } catch (error) {
-      console.log(error);
-      res.status(500).send('Internal Server Error');
-    } finally {
-      conn.release();
+  const { username, email, password } = req.body;
+  console.log('username:', username);
+  console.log('email:', email);
+  console.log('password:', password);
+
+  const conn = await pool.getConnection();
+  try {
+    const results = await conn.query(`SELECT * FROM users WHERE username = '${username}'`);
+    console.log('results:', results);
+    if (results.length > 0) {
+      res.status(409).send('Conflict');
+    } else {
+      const result = await conn.query(`INSERT INTO users (username, email, password) VALUES ('${username}', '${email}', '${password}')`);
+      console.log('insert result:', result);
+      const userId = result.insertId;
+      const token = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      const response = {
+        id: userId,
+        username: username,
+        email: email,
+        role: 'user',
+        token: token
+      };
+      res.json(response);
     }
-  });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    conn.release();
+  }
+});
 
 app.listen(port, () => console.log(`API server listening on port ${port}`));

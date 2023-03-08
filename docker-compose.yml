@@ -2,16 +2,16 @@ version: '3'
 
 services:
   front:
-    image: front-frostyfinds
+    image: frostyfinds-front
     ports:
       - "80:80"
     volumes:
-      - ./front/dist/shifumi:/usr/share/nginx/html
+      - ./front/dist/frostyfinds:/usr/share/nginx/html
     depends_on:
       - back
 
   back:
-    image: back-frostyfinds
+    image: frostyfinds-back
     ports:
       - "3000:3000"
     environment:
