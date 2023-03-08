@@ -1,0 +1,15 @@
+<div class="product-details-container">
+    <div class="product-image">
+      <img [src]="product?.image" alt="{{ product?.name }}" class="image">
+    </div>
+    <div class="product-details">
+      <h1>{{ product?.name }}</h1>
+      <h2>{{ product?.description }}</h2>
+      <div class="price">{{ product?.price | currency }}</div>
+      <p>{{ product?.longDescription }}</p>
+      <div class="button-container">
+        <button nz-button nzType="primary" routerLink="/cart">Ajouter au panier</button>
+        <button nz-button nzType="primary" routerLink="/products">Retour aux produits</button>
+      </div>
+    </div>
+  </div>

@@ -14,8 +14,11 @@
                 </div>
         </nz-carousel>
     </div>
-    <h1>Bienvenue sur Frosty Finds</h1>
-    <p>Nous proposons une large sélection d'équipements de sport d'hiver pour tous les niveaux.</p>
+    <div class="intro">
+			<h1>Bienvenue sur Frosty Finds</h1>
+			<p>Nous sommes le meilleur choix pour tous vos besoins en équipement de ski. Nous proposons des produits de haute qualité à des prix compétitifs pour vous permettre de profiter pleinement de l'expérience de ski sans vous ruiner.</p>
+			<button nz-button nzType="primary" routerLink="/products">Explorer les produits</button>
+		</div>
     <div class="carousel-wrapper">
         <nz-carousel nzAutoPlay nzEffect="scrollx" [nzLoop]="false">
             <div nz-carousel-content *ngFor="let image of images">
@@ -23,45 +26,119 @@
                 </div>
         </nz-carousel>
     </div>
-    <button nz-button nzType="primary" routerLink="/products">Explorer les produits</button>
-    <nz-divider></nz-divider>
-    <h2>Promos du moment</h2>
-    <div class="promo">
-        <nz-card [nzCover]="coverTemplate">
-            <ng-template #coverTemplate>
-              <div class="card-image-promo">
-                <img src="https://oberalp.imgix.net/02b018d9-0ecc-461b-9526-cd81328f3897.png?auto=format&w=1280&h=1280" alt="" class="image-promo">
-              </div>
-            </ng-template>
-            <div class="card-content">
-              <div class="card-title">Nom du produit</div>
-              <div class="card-description">Description du produit</div>
-              <div class="card-price">99,99 €</div>
-            </div>
-        </nz-card>
-        <nz-card [nzCover]="coverTemplate">
-            <ng-template #coverTemplate>
-              <div class="card-image-promo">
-                <img src="" alt="">
-              </div>
-            </ng-template>
-            <div class="card-content">
-              <div class="card-title">Nom du produit</div>
-              <div class="card-description">Description du produit</div>
-              <div class="card-price">99,99 €</div>
-            </div>
-        </nz-card>
-        <nz-card [nzCover]="coverTemplate">
-            <ng-template #coverTemplate>
-              <div class="card-image-promo">
-                <img src="" alt="">
-              </div>
-            </ng-template>
-            <div class="card-content">
-              <div class="card-title">Nom du produit</div>
-              <div class="card-description">Description du produit</div>
-              <div class="card-price">99,99 €</div>
-            </div>
-        </nz-card>
+		<div class="services">
+			<div class="service">
+				<img src="https://cdn-icons-png.flaticon.com/512/2867/2867529.png" alt="Qualité des produits">
+				<h2>Qualité des produits</h2>
+				<p>Nous sommes fiers de proposer des produits de haute qualité pour garantir la performance et la durabilité de tous nos équipements de ski. Nous sommes convaincus que vous trouverez les produits parfaits pour vos besoins sur notre site.</p>
+			</div>
+			<div class="service">
+				<img src="https://cdn-icons-png.flaticon.com/512/2807/2807968.png" alt="Large choix de produits">
+				<h2>Large choix de produits</h2>
+				<p>Notre sélection de produits comprend tout ce dont vous avez besoin pour une journée sur les pistes, des skis et des bâtons aux chaussures et aux vêtements pour tous les niveaux et tous les âges.</p>
+			</div>
+			<div class="service">
+				<img src="https://cdn-icons-png.flaticon.com/512/3341/3341899.png" alt="Livraison rapide">
+				<h2>Livraison rapide</h2>
+				<p>Nous nous engageons à traiter toutes les commandes rapidement pour que vous puissiez profiter de vos articles dans les plus brefs délais. Nous travaillons avec des partenaires logistiques fiables pour garantir une livraison rapide et efficace.</p>
+		  </div>
+      <div class="service">
+				<img src="https://cdn-icons-png.flaticon.com/512/4168/4168397.png">
+        <h2>Service clientèle de qualité</h2>
+				<p>Nous nous efforçons de fournir un service clientèle exceptionnel pour répondre à toutes vos questions et besoins. Notre équipe de service clientèle est là pour vous aider avant, pendant et après votre achat pour vous assurer une expérience client exceptionnelle.</p>
+			</div>
+			<div class="service">
+				<img src="https://cdn-icons-png.flaticon.com/512/4156/4156829.png" alt="Sécurité des transactions">
+				<h2>Sécurité des transactions</h2>
+				<p>Nous utilisons des méthodes de paiement sécurisées pour protéger vos informations personnelles et financières lors de toutes vos transactions sur notre site. Vous pouvez être sûr que toutes vos données sont protégées.</p>
+			</div>
+    </div>
+    <div class="promos">
+			<h2>Promos du moment</h2>
+			<div class="promo">
+				<nz-card [nzCover]="coverTemplate1" class="card-promo">
+					<ng-template #coverTemplate1>
+					  <div class="card-image-promo">
+						<img src="{{products[0].image}}" alt="" class="image-promo">
+					  </div>
+					</ng-template>
+					<div class="card-content">
+					  <div class="card-title">{{products[0].name}}</div>
+					  <div class="card-description">{{products[0].description}}</div>
+					  <div class="card-price">{{products[0].price}} €</div>
+            <button nz-button nzType="primary" routerLink="/product/{{ products[0].id }}">Voir les détails</button>
+					</div>
+				</nz-card>
+				<nz-card [nzCover]="coverTemplate2" class="card-promo">
+					<ng-template #coverTemplate2>
+					  <div class="card-image-promo">
+						<img src="{{products[1].image}}" alt="" class="image-promo">
+					  </div>
+					</ng-template>
+					<div class="card-content">
+					  <div class="card-title">{{products[1].name}}</div>
+					  <div class="card-description">{{products[1].description}}</div>
+					  <div class="card-price">{{products[1].price}} €</div>
+            <button nz-button nzType="primary" routerLink="/product/{{ products[1].id }}">Voir les détails</button>
+					</div>
+				</nz-card>
+				<nz-card [nzCover]="coverTemplate3" class="card-promo">
+					<ng-template #coverTemplate3>
+					  <div class="card-image-promo">
+						<img src="{{products[2].image}}" alt="" class="image-promo">
+					  </div>
+					</ng-template>
+					<div class="card-content">
+					  <div class="card-title">{{products[2].name}}</div>
+					  <div class="card-description">{{products[2].description}}</div>
+					  <div class="card-price">{{products[2].price}} €</div>
+            <button nz-button nzType="primary" routerLink="/product/{{ products[2].id }}">Voir les détails</button>
+					</div>
+				</nz-card>
+      </div>
+  </div>
+  <nz-divider></nz-divider>
+  <div class="testimonials">
+    <h2>Témoignages de clients</h2>
+    <div class="testimonial">
+      <div class="testimonial-image">
+        <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="Photo du client">
+      </div>
+      <div class="testimonial-content">
+        <p>"J'ai acheté des skis sur Frosty Finds et je suis très satisfait de mon achat. Les skis sont de très bonne qualité et j'ai pu les utiliser pendant toute la saison de ski. Je recommande vivement ce site!"</p>
+        <p class="testimonial-author">- Jean Dubois</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-image">
+        <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="Photo du client">
+      </div>
+      <div class="testimonial-content">
+        <p>"J'ai trouvé le guide d'achat sur Frosty Finds très utile pour choisir les bons skis pour mon niveau. Le site propose une large sélection de produits et le service clientèle est excellent."</p>
+        <p class="testimonial-author">- Marie Dupont </p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-image">
+        <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="Photo du client">
+      </div>
+      <div class="testimonial-content">
+        <p>"J'ai acheté des chaussures de ski sur Frosty Finds et j'ai reçu une aide précieuse de l'équipe pour choisir la bonne taille. Les chaussures sont très confortables et je les recommande vivement."</p>
+        <p class="testimonial-author">- Pierre Martin</p>
+      </div>
+    </div>
+  </div>
+  <nz-divider></nz-divider>
+    <div class="buying-guide">
+      <h2>Guide d'achat</h2>
+      <p>Choisir les bons équipements de ski peut être difficile, surtout si vous êtes débutant. Voici quelques conseils pour vous aider à trouver les meilleurs produits pour votre niveau de ski :</p>
+      <ul>
+        <li>Skis : Si vous êtes débutant, choisissez des skis plus courts et plus larges pour une meilleure stabilité. Si vous êtes un skieur expérimenté, optez pour des skis plus longs et plus étroits pour plus de vitesse et de précision.</li>
+        <li>Bâtons : Les bâtons doivent être choisis en fonction de votre taille. Tenez le bâton par la poignée et placez-le sur le sol à côté de vous. Si votre coude forme un angle de 90 degrés, c'est que le bâton est de la bonne taille pour vous.</li>
+        <li>Chaussures : Les chaussures doivent être choisies en fonction de votre niveau de ski et de la forme de votre pied. Assurez-vous que la chaussure soit bien ajustée et confortable.</li>
+        <li>Vêtements : Les vêtements de ski doivent être choisis en fonction des conditions météorologiques et de votre niveau de ski. Les vestes et les pantalons doivent être imperméables et chauds, et les couches de base doivent être respirantes pour évacuer l'humidité.</li>
+      </ul>
+      <p>N'hésitez pas à contacter notre équipe si vous avez des questions ou si vous avez besoin de conseils supplémentaires pour choisir vos équipements de ski.</p>
+      <button nz-button nzType="primary" routerLink="/buying-guide">Voir le guide complet</button>
     </div>
 </div>

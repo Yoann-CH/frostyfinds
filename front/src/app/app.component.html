@@ -7,11 +7,11 @@
         <li nz-menu-item routerLink="/products">Produits</li>
         <li nz-menu-item routerLink="/cart">Panier</li>
       </ul>
-      <button nz-button nzType="primary" routerLink="/login">Connexion</button>
+      <button nz-button *ngIf="!isLoggedIn" nzType="primary" routerLink="/login">Connexion</button>
+      <button nz-button *ngIf="isLoggedIn" nzType="primary" routerLink="/profile">Profil</button>
     </div>
   </nz-header>
   <nz-layout>
     <router-outlet></router-outlet>
   </nz-layout>
-  <nz-footer class="footer">Frosty Finds ©2023</nz-footer>
 </nz-layout>

@@ -1,0 +1,55 @@
+<nz-card>
+    <div class="product-columns">
+      <div class="product-column">
+        <ul nz-list>
+          <li *ngFor="let product of products1" nz-list-item>
+            <nz-card [nzCover]="coverTemplate1" class="product">
+            <ng-template #coverTemplate1>
+                <img src="{{product.image}}" alt="" class="product-image">
+            </ng-template>
+              <nz-card-meta nzTitle="{{ product.name }}" nzDescription="{{ product.description }}"></nz-card-meta>
+              <div class="product-actions">
+                <button nz-button nzType="primary" routerLink="/product/{{ product.id }}">Voir les détails</button>
+                <span class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2' }}</span>
+              </div>
+              <button nz-button nzType="primary">Ajouter au panier</button>
+            </nz-card>
+          </li>
+        </ul>
+      </div>
+      <div class="product-column">
+        <ul nz-list>
+          <li *ngFor="let product of products2" nz-list-item>
+            <nz-card [nzCover]="coverTemplate2" class="product">
+            <ng-template #coverTemplate2>
+                <img src="{{product.image}}" alt="" class="product-image">
+            </ng-template>
+              <nz-card-meta nzTitle="{{ product.name }}" nzDescription="{{ product.description }}"></nz-card-meta>
+              <div class="product-actions">
+                <button nz-button nzType="primary" routerLink="/product/{{ product.id }}">Voir les détails</button>
+                <span class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2' }}</span>
+              </div>
+              <button nz-button nzType="primary">Ajouter au panier</button>
+            </nz-card>
+          </li>
+        </ul>
+      </div>
+      <div class="product-column">
+        <ul nz-list>
+          <li *ngFor="let product of products3" nz-list-item>
+            <nz-card [nzCover]="coverTemplate3" class="product">
+            <ng-template #coverTemplate3>
+                <img src="{{product.image}}" alt="" class="product-image">
+            </ng-template>
+              <nz-card-meta nzTitle="{{ product.name }}" nzDescription="{{ product.description }}"></nz-card-meta>
+              <div class="product-actions">
+                <button nz-button nzType="primary" routerLink="/product/{{ product.id }}">Voir les détails</button>
+                <span class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2' }}</span>
+              </div>
+              <button nz-button nzType="primary">Ajouter au panier</button>
+            </nz-card>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nz-card>

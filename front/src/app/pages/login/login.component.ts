@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private authService: AuthService,
-    private messageService: NzMessageService
+    private messageService: NzMessageService,
   ) {
     this.createLoginForm();
   }
@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.get('password')?.value;
     this.authService.login(username, password).subscribe(
       () => {
+        window.location.reload();
         this.router.navigateByUrl('/');
         this.isSubmitting = false;
       },

@@ -16,12 +16,18 @@ import { LoginComponent } from './pages/login/login.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'profile', component: ProfileComponent},
+  { path: 'products', component: ProductComponent},
+  { path: 'product/:id', component: ProductDetailsComponent },
 ];
 
 @NgModule({
@@ -29,7 +35,10 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    ProductComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -15,8 +15,6 @@ COPY . .
 #installing deps for project
 RUN npm install
 
-#creating angular build
-RUN npm run build
 
 #STEP-2 RUN
 #Defining nginx img 

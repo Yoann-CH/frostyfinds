@@ -1,0 +1,17 @@
+<nz-card class="profile-card">
+    <div nz-row nzGutter="16">
+      <div nz-col nzSpan="6">
+        <div class="profile-picture">
+          <img src="https://via.placeholder.com/150x150" alt="Profile Picture">
+        </div>
+      </div>
+      <div nz-col nzSpan="18">
+        <h2 class="profile-name">{{currentUser.username}}</h2>
+        <p class="profile-email">{{currentUser.email}}</p>
+        <div class="profile-buttons">
+          <button nz-button nzType="primary">Modifier le profil</button>
+          <button nz-button nzType="primary" nzDanger>Supprimer le compte</button>
+        </div>
+      </div>
+    </div>
+</nz-card>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 
 export interface User {
   id: number;
@@ -55,5 +55,23 @@ export class AuthService {
   isLoggedIn(): boolean {
     const token = this.getToken();
     return !!token;
+  }
+
+  getCurrentUser(): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      // No token, return empty observable
+      return new Observable();
+    }
+
+    const url = `${this.apiUrl}/users/me`;
+    return this.http.get<any>(url, { headers: { Authorization: `Bearer ${token}` } })
+      .pipe(
+        map(user => {
+          // Save user in localStorage
+          localStorage.setItem('user', JSON.stringify(user));
+          return user;
+        })
+      );
   }
 }

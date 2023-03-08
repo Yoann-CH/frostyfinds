@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
-import { switchMap, tap, catchError, of } from 'rxjs';
+import { switchMap, tap, catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -35,9 +35,10 @@ export class RegisterComponent implements OnInit {
         .pipe(
           switchMap(() => this.authService.login(username, password)),
           tap(() => this.router.navigateByUrl('/')),
-          catchError(() => {
+          catchError((err) => {
+            console.log(err);
             this.isSubmitting = false;
-            return of(null);
+            return throwError(err);
           })
         )
         .subscribe();

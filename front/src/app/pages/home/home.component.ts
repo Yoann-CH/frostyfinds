@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  products: Product[] = [
+    { id: 1, name: 'Ski Rossignol', description: 'Un ski de qualité pour les pistes', price: 599.99, image: 'https://cdn.shopify.com/s/files/1/0576/4340/1365/products/fcc98bc1525ce457cba538f7c4771d1c_750x750.png?v=1671463564' },
+    { id: 2, name: 'Ski Salomon', description: 'Un ski de qualité pour les pistes et les hors-pistes', price: 799.99, image: 'https://www.salomon.com/fr-fr/shop-emea/media/catalog/product/L/4/L41670600__84e95cdcda1c8c1e5a6d7e63c3b9edd7.png' },
+    { id: 3, name: 'Chaussures de ski Salomon', description: 'Des chaussures confortables pour le ski', price: 199.99, image: 'https://hello-mountain.com/wp-content/uploads/2023/02/1-111.png' },
+  ];
 
   public images_head = [
     'https://cdn.france-montagnes.com/sites/default/files/styles/header_webzine/public/header/banniere_23.jpg?itok=PfHNBrxl',
